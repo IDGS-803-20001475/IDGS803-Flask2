@@ -1,0 +1,27 @@
+{%extends "layout.html"%}
+
+{%block content%}
+
+{% from "_macros.html" import render_input%}
+
+<form name="form1" method="post">
+
+    <div class="control_group">
+        <div class="controls">
+            {{render_input("txtMatricula", "Matricula")}}
+            {{render_input("txtNombre", "Nombre")}}
+            {{render_input("txtEdad", "Edad", type="number")}}
+            {{render_input("txtCorreo", "Correo", type="email")}}
+            {{render_input("txtpassword", "Contrasenia", type="password")}}
+            <div class="control-group">
+                <div class="controls">
+                    <button type="submit" class="btn btn-default btn-primary">
+                        <i class="icon-book icon-white"></i>Calcular
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+{%endblock%}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap.min.css">
+    <title>Cinepolis</title>
+    <style>
+        .centrado {
+            width: 400px;
+            background: #0553a1;
+            padding: 30px;
+            margin: auto;
+            margin-top: 30px;
+            border-radius: 4px;
+            font-family: 'calibri';
+            color: #fff;
+            box-shadow: 7px 13px 37px #000;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="../static/bootstrap/css/bootstrap-responsive.min.css">
+</head>
+
+<body>
+    <div class="centrado">
+        <header class="text-center">
+            <h1>Ticket de compra</h1>
+            <img src="static\img\cine.png" alt="">
+        </header>
+        <section class="border border-5 border-warning">
+            <h3>Datos de la compra</h3>
+                    <label for="" class="control-label">Nombre:</label>
+                    <h3>{{nombre}}</h3>
+        </br>
+                    <label for="" class="control-label">Cantidad de boletos permitidos:</label>
+                    <h3>{{permitidos}}</h3>
+        </br>
+
+                    <label for="" class="control-label">Cantidad de Boletos:</label>
+                    <h3>{{pedidos}}</h3>
+        </br>
+        <label for="" class="control-label">Total de la compra:</label>
+        <h3>${{total}}</h3>
+        </br>
+        <form method="get" action="/index" >
+            <button type="submit" class="btn btn-danger">Salir
+           </form>
+                    </div>
+                </div>
+            
+        </section>
+    </div>
+    <div class="container">
+
+    </div>
+     {% block content %}
+    
+    {% endblock %}
+</body>
+
+</html>
