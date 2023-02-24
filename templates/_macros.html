@@ -19,14 +19,10 @@
     </div>
 {%endmacro%}
 
-{% macro render_cajasD (num_imputs, placeholder,type="number")%}
+{% macro render_cajasD(cant)%}
 
-<div class="control-group">
-    <label for="{{name}}" class="control-label">
-        {{placeholder}}
-    </label>
-    <div class="controls">
-        <input type="{{type}}" name="{{name}}" placeholder=""id="num_inputs" required>
-    </div>
+<div class="controls">
+    <label for="caja{{cant}}" class="control-label">N{{cant}}</label>
+    <input type="number" name="caja{{cant}}">
 </div>
 {%endmacro%}

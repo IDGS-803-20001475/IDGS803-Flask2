@@ -2,14 +2,16 @@
 
 {%block content%}
 
-{% from "_macros.html" import render_cajasD%}
+{% from "_macros.html" import render_cajasD %}
 
-<form name="form1" method="post">
+<form action="/cajasD" method="post">
 
     <div class="control_group">
-        
+        <label for="txtCant" class="control-label">Número de cajas:</label>
         <div class="controls">
-            {{render_cajasD("num_imputs", "Numeros")}}
+            <div class="controls">
+                <input type="text" name="txtCant">
+            </div>
             <div class="control-group">
                 <div class="controls">
                     <button type="submit" class="btn btn-default btn-primary">
@@ -18,11 +20,24 @@
                 </div>
             </div>
         </div>
+    </form>
     </div>
-    {% for i in range(num_inputs) %}
-        <label for="input_{{i}}">Input {{i+1}}:</label>
-        <input type="text" name="input_{{i}}" id="input_{{i}}" required>
-      {% endfor %}
-</form>
+    <div class="container">
+        {% if cantidad > 0 %}
+        <form action="/resultados" method="POST">
+    {%from "_macros.html" import render_cajasD%}
+
+            {% for i in range(1, cantidad+1) %}
+                {{render_cajasD(i)}}
+            {% endfor %}
+            <div class="controls">
+                <input value={{cantidad}} name="txtCantNums" hidden>
+                <button type="submit" class="btn btn-default btn-primary">
+                    Calcular
+                </button>
+            </div>
+        </form>
+        {% endif %}
+            
 
 {%endblock%}

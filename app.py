@@ -15,5 +15,7 @@ def alumnos():
         print(alum_form.nombre.data)
     return render_template('Alumnos.html',form=alum_form)
 
+
+
 if __name__== "__main__":
     app.run(debug = True)

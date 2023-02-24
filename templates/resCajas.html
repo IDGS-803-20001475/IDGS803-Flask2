@@ -1,0 +1,25 @@
+{%extends "layout.html"%}
+
+{%block content%}
+<div class="container">
+    <h2 class="">RESULTADOS</h2>
+    <br/>
+    <div class="">
+        <h4>Numero Maximo: {{numMax}}</h4>
+        <br/>
+        <h4>Numero Minimo: {{numMin}}</h4>
+        <br/>
+        <h4>Promedio: {{promedio}}</h4>
+        <br/>
+        <h4>Numeros repetidos:</h4>
+        <div class="">
+            {% for numero, cantidad in contador.items() %}
+                {% if cantidad > 1: %}
+                <h4>{{numero}} => {{cantidad}} veces</h4>
+                {% endif %}
+            {% endfor %}
+
+    </div>
+
+    </div>
+    {%endblock%}
