@@ -1,0 +1,14 @@
+
+Hola
+Hello
+Hola
+Hello
+Hola=Hello
+Hola=Hello
+azul=blue
+AZUL = BLUE
+AZUL = BLUE
+AZUL = BLUE
+AZUL = BLUE
+AZUL = BLUE
+AZUL = BLUE
