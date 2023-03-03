@@ -33,3 +33,25 @@
     <input type="number" name="caja{{cant}}">
 </div>
 {%endmacro%}
+
+{% macro render_colores(name, value) %}
+    <select name="{{ name }}" onchange="this.form.submit()">
+        <option value="0" {% if value == '0' %}selected{% endif %}>Negro</option>
+        <option value="1" {% if value == '1' %}selected{% endif %}>Cafe</option>
+        <option value="2" {% if value == '2' %}selected{% endif %}>Rojo</option>
+        <option value="3" {% if value == '3' %}selected{% endif %}>Naranja</option>
+        <option value="4" {% if value == '4' %}selected{% endif %}>Amarillo</option>
+        <option value="5" {% if value == '5' %}selected{% endif %}>Verde</option>
+        <option value="6" {% if value == '6' %}selected{% endif %}>Azul</option>
+        <option value="7" {% if value == '7' %}selected{% endif %}>Violeta</option>
+        <option value="8" {% if value == '8' %}selected{% endif %}>Gris</option>
+        <option value="9" {% if value == '9' %}selected{% endif %}>Blanco</option>
+    </select>
+{% endmacro %}
+
+{% macro render_coloresTolerancia(name, value) %}
+    <select name="{{ name }}" onchange="this.form.submit()">
+        <option value="0" {% if value == '0' %}selected{% endif %}>Oro (+/- 5%)</option>
+        <option value="1" {% if value == '1' %}selected{% endif %}>Plata (+/- 10%)</option>
+    </select>
+{% endmacro %}

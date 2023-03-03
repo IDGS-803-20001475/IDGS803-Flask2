@@ -4,6 +4,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField, SubmitField, FieldList, FormField, SelectField, RadioField
 from wtforms.fields import EmailField
 from wtforms import validators
+from wtforms.validators import DataRequired
 
 def mi_validacion(form,field):
     if len(field.data)==0:
@@ -32,11 +33,24 @@ class LoginForm(Form):
     ])
 
 class traductor(Form):
-    palabra=StringField('español',[
+    palabra=StringField('Español',[
         validators.DataRequired(message="El campo es requerido"),
         validators.length(min=2,max=15, message="No cumple la longitud para el campo")
     ])
-    word=StringField('ingles',[
+    word=StringField('Ingles',[
+        validators.DataRequired(message="El campo es requerido"),
+        validators.length(min=2,max=15, message="No cumple la longitud para el campo")
+    ])
+
+class SearchForm(Form):
+    search = StringField('Buscar Palabra:',[
+        validators.DataRequired(message="El campo es requerido")
+        ])
+    palabra=StringField('Español',[
+        validators.DataRequired(message="El campo es requerido"),
+        validators.length(min=2,max=15, message="No cumple la longitud para el campo")
+    ])
+    word=StringField('Ingles',[
         validators.DataRequired(message="El campo es requerido"),
         validators.length(min=2,max=15, message="No cumple la longitud para el campo")
     ])

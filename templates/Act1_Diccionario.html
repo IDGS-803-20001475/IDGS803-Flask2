@@ -4,13 +4,47 @@
 
 <div class="col-xs-6">
     {%from "_macros.html" import render_field%}
-    <form action="" method="post" novalidate>
-        {{form.csrf_token}}
-        <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
-        {{render_field(form.palabra)}}
-        {{render_field(form.word)}}
-        <input type="submit" value="Registrar">
+    <h1>Agregar palabra</h1>
+    <form action="/palabras" method="post" novalidate {{csrf_token}}>
+        
+
+        <p>
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            {{ form.palabra.label }}<br>
+            {{ form.palabra(size=30) }}<br>
+            {% for error in form.palabra.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.word.label }}<br>
+            {{ form.word(size=30) }}<br>
+            {% for error in form.word.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            <input type="submit" class="btn btn-success mt-3" value="Agregar palabra">
+        </p>
     </form>
 </div>
 <div class="col-xs-6"></div>
+<br>
+<h2>Buscar</h2>
+<div class="container">
+    <div class="col-xs-6" style="display: inline-block;  width: 50%; margin: 10px; padding: 10px;">
+        <form action="/buscarPalabra" method="post" novalidate {{csrf_token}}>
+            <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
+            <input type="radio" name="idioma" value="espanol" checked>Español
+            <input type="radio" name="idioma" value="ingles">Inglés
+            <br>
+            <br>
+            {{render_field(form.search)}}
+            <button class="btn btn-success" type="submit">Buscar</button>
+        </form>
+    </div>
+    <div class="col-xs-6" style="display: inline-block; margin: 10px; padding: 10px;">
+        <h3>Traduccion: {{translation}}</h3>
+    </div>
+</div>
 {% endblock %} 

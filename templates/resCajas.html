@@ -1,9 +1,9 @@
 {%extends "layout.html"%}
 
 {%block content%}
-<div class="container">
+<div class="container" >{{csrf_token}}
     <h2 class="">RESULTADOS</h2>
-    <br/>
+    <br/><input type="hidden" name="csrf_token" value="{{csrf_token()}}">
     <div class="">
         <h4>Numero Maximo: {{numMax}}</h4>
         <br/>

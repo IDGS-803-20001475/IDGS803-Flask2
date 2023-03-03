@@ -4,8 +4,8 @@
 
 {% from "_macros.html" import render_cajasD %}
 
-<form action="/cajasD" method="post">
-
+<form action="/cajasD" method="post" novalidate {{csrf_token}}>
+    <input type="hidden" name="csrf_token" value="{{csrf_token()}}">
     <div class="control_group">
         <label for="txtCant" class="control-label">Número de cajas:</label>
         <div class="controls">
